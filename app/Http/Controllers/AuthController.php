@@ -95,9 +95,7 @@ class AuthController extends Controller
                                    ->where('password_reset_token','=',$confirm_token)->get();
         if(count($the_user)>0)
         {
-        \Session::put('password_token', $confirm_token);
-        \Session::put('email', $email);
-        return view('auth.updatepassword');
+      return view('auth.updatepassword',['password_token'=>$confirm_token , 'email'=>$email]);
         }
        
         else 
