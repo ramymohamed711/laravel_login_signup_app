@@ -45,8 +45,8 @@ class User extends Authenticatable
     * validate password length and it's confirmation
     */
      public static $create_validation_rules = [
-      'firstname' => 'required',
-      'surname' => 'required',
+      'firstname' => 'required|regex:/(^[A-Za-z]+$)+/',
+      'surname' => 'required|regex:/(^[A-Za-z]+$)+/',
       'email' => 'required|email',
       'user_type' =>'in:orchestra,musician,member',
       'gender' => 'in:1,2',
