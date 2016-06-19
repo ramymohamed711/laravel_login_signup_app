@@ -23,8 +23,9 @@
       {!! Form::password('password_confirmation', array('class' => 'form-control')) !!}
     </div>
     
-    {{ Form::hidden('email', Session::get('email')) }}
-    {{ Form::hidden('password_token', Session::get('password_token') ) }}
+    {{ Form::hidden('email', $email) }}
+    {{ Form::hidden('password_token', $password_token ) }}
+
 
     {!! Form::token() !!}
     {!! Form::submit('Update password', array('class' => 'btn btn-default')) !!}
